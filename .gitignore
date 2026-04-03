@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build folders
+dist/
+build/
+
+# Editor files
+.vscode/
+.idea/
+
+# Optional (keep if you want consistency)
+# package-lock.json

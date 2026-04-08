@@ -9,7 +9,6 @@ const Sidebar = () => {
     { name: 'Analytics', path: '/analytics', icon: BarChart3 },
     { name: 'Earnings', path: '/earnings', icon: Wallet },
     { name: 'Promo Codes', path: '/promos', icon: Tag },
-    { name: 'Resale', path: '/resale', icon: ArrowRightLeft },
   ];
 
   return (

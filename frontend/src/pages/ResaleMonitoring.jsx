@@ -35,9 +35,9 @@ const ResaleMonitoring = () => {
                             return (
                                 <tr key={item.id} className="hover:bg-muted/50 transition-colors">
                                     <td className="px-6 py-4 font-medium">{item.event}</td>
-                                    <td className="px-6 py-4 text-muted-foreground">${item.originalPrice}</td>
-                                    <td className="px-6 py-4 font-medium">${item.resalePrice}</td>
-                                    <td className="px-6 py-4 text-muted-foreground">${item.cap}</td>
+                                    <td className="px-6 py-4 text-muted-foreground">₹{item.originalPrice}</td>
+                                    <td className="px-6 py-4 font-medium">₹{item.resalePrice}</td>
+                                    <td className="px-6 py-4 text-muted-foreground">₹{item.cap}</td>
                                     <td className="px-6 py-4">
                                         {isCompliant ? (
                                             <span className="flex items-center gap-1.5 text-green-500 font-medium">

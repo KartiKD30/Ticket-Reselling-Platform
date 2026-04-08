@@ -72,19 +72,19 @@ const Earnings = () => {
                     <div className="text-sm font-medium text-muted-foreground mb-2 flex items-center gap-2">
                         <Wallet className="w-4 h-4 text-primary" /> Total Earnings
                     </div>
-                    <div className="text-4xl font-bold tracking-tight">${payoutData?.totalEarnings?.toLocaleString()}</div>
+                    <div className="text-4xl font-bold tracking-tight">₹{payoutData?.totalEarnings?.toLocaleString()}</div>
                 </div>
                 <div className="bg-card border border-border shadow-sm rounded-xl p-6 flex flex-col justify-center">
                     <div className="text-sm font-medium text-muted-foreground mb-2 flex items-center gap-2">
                         <Clock className="w-4 h-4 text-orange-500" /> Pending Payouts
                     </div>
-                    <div className="text-4xl font-bold tracking-tight text-orange-500">${payoutData?.pendingPayouts?.toLocaleString()}</div>
+                    <div className="text-4xl font-bold tracking-tight text-orange-500">₹{payoutData?.pendingPayouts?.toLocaleString()}</div>
                 </div>
                 <div className="bg-card border border-border shadow-sm rounded-xl p-6 flex flex-col justify-center">
                     <div className="text-sm font-medium text-muted-foreground mb-2 flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-green-500" /> Completed Payouts
                     </div>
-                    <div className="text-4xl font-bold tracking-tight text-green-500">${payoutData?.completedPayouts?.toLocaleString()}</div>
+                    <div className="text-4xl font-bold tracking-tight text-green-500">₹{payoutData?.completedPayouts?.toLocaleString()}</div>
                 </div>
             </div>
 
@@ -114,7 +114,7 @@ const Earnings = () => {
                             <tr key={payout._id} className="hover:bg-muted/50 transition-colors">
                                 <td className="px-6 py-4 font-medium">{new Date(payout.createdAt).toLocaleDateString()}</td>
                                 <td className="px-6 py-4 text-muted-foreground">{payout.eventId?.name || 'N/A'}</td>
-                                <td className="px-6 py-4 font-bold text-foreground">${payout.amount?.toLocaleString()}</td>
+                                <td className="px-6 py-4 font-bold text-foreground">₹{payout.amount?.toLocaleString()}</td>
                                 <td className="px-6 py-4 flex items-center gap-4">
                                      <span className={`px-2.5 py-1 rounded-full text-xs font-medium border flex w-fit items-center gap-1.5 ${
                                         payout.status === 'completed' ? 'bg-green-500/10 text-green-500 border-green-500/20' :

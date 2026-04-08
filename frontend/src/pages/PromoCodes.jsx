@@ -108,7 +108,7 @@ const PromoCodes = () => {
                                 <td className="px-6 py-4 font-bold tracking-wider"><span className="bg-muted px-2 py-1 rounded text-foreground">{promo.code}</span></td>
                                 <td className="px-6 py-4 text-muted-foreground">{promo.eventId?.name || 'All Events'}</td>
                                 <td className="px-6 py-4 font-medium text-green-500">
-                                    {promo.discountType === 'percentage' ? `${promo.discountValue}% OFF` : `$${promo.discountValue} OFF`}
+                                    {promo.discountType === 'percentage' ? `${promo.discountValue}% OFF` : `₹${promo.discountValue} OFF`}
                                 </td>
                                 <td className="px-6 py-4 text-muted-foreground">
                                     {promo.timesUsed} / {promo.usageLimit || '∞'}
@@ -143,7 +143,7 @@ const PromoCodes = () => {
                             <label className="block text-sm font-medium mb-1">Discount Type</label>
                             <select className="w-full bg-background border border-border rounded-lg px-3 py-2" value={formData.discountType} onChange={(e) => setFormData({...formData, discountType: e.target.value})}>
                                 <option value="percentage">Percentage (%)</option>
-                                <option value="fixed">Fixed Amount ($)</option>
+                                <option value="fixed">Fixed Amount (₹)</option>
                             </select>
                         </div>
                         <div>

@@ -17,10 +17,25 @@ router.get('/', async (req, res) => {
 // Create event
 router.post('/', async (req, res) => {
   try {
-    const newEvent = new Event(req.body);
+    const body = { ...req.body };
+
+    // Normalize: title must exist; fallback to name for legacy compatibility
+    if (!body.title && body.name) body.title = body.name;
+
+    // Cast numeric fields to Number to avoid storing strings in MongoDB
+    if (body.price !== undefined)           body.price           = Number(body.price)          || 0;
+    if (body.totalTickets !== undefined)    body.totalTickets    = parseInt(body.totalTickets)  || 0;
+    if (body.availableTickets !== undefined) body.availableTickets = parseInt(body.availableTickets) || 0;
+
+    console.log('[POST /api/events] Creating event with body:', body);
+
+    const newEvent = new Event(body);
     await newEvent.save();
+
+    console.log('[POST /api/events] Saved event:', newEvent._id, '| status:', newEvent.status);
     res.status(201).json(newEvent);
   } catch (err) {
+    console.error('[POST /api/events] Error:', err.message);
     res.status(400).json({ error: err.message });
   }
 });
@@ -39,9 +54,28 @@ router.get('/:id', async (req, res) => {
 // Update event
 router.put('/:id', async (req, res) => {
   try {
-    const updatedEvent = await Event.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const { id } = req.params;
+    console.log(`[Senior Log] Updating event ${id}. Incoming Body:`, req.body);
+    
+    // Explicitly cast numeric fields to ensure they satisfy the schema correctly
+    if (req.body.price !== undefined) req.body.price = Number(req.body.price);
+    if (req.body.totalTickets !== undefined) req.body.totalTickets = Number(req.body.totalTickets);
+    if (req.body.availableTickets !== undefined) req.body.availableTickets = Number(req.body.availableTickets);
+
+    const updatedEvent = await Event.findByIdAndUpdate(id, { $set: req.body }, { 
+      new: true, 
+      runValidators: true 
+    });
+
+    if (!updatedEvent) {
+      console.error(`[Senior Log] Event with ID ${id} not found.`);
+      return res.status(404).json({ error: 'Event not found' });
+    }
+
+    console.log(`[Senior Log] Update successful for ${id}. Saved Price: ${updatedEvent.price}`);
     res.json(updatedEvent);
   } catch (err) {
+    console.error('[Senior Log] Update error:', err);
     res.status(400).json({ error: err.message });
   }
 });
@@ -68,7 +102,7 @@ router.post('/:id/duplicate', async (req, res) => {
     delete newEventData._id;
     delete newEventData.createdAt;
     delete newEventData.updatedAt;
-    newEventData.name = newEventData.name + ' (Copy)';
+    newEventData.title = newEventData.title ? newEventData.title + ' (Copy)' : 'Untitled (Copy)';
     
     const newEvent = new Event(newEventData);
     await newEvent.save();

@@ -10,24 +10,14 @@ import Earnings from './pages/Earnings';
 import PromoCodes from './pages/PromoCodes';
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
-
   useEffect(() => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    }
+    document.documentElement.classList.remove('dark');
   }, []);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle('dark');
-  };
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout toggleTheme={toggleTheme} isDark={isDark} />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<DashboardOverview />} />
           <Route path="events" element={<EventManagement />} />
           <Route path="analytics" element={<SalesAnalytics />} />

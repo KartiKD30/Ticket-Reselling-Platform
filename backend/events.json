@@ -1,0 +1,124 @@
+[
+  {
+    "_id": "69d4c1bc50532dceefe78768",
+    "name": "social",
+    "date": "2026-05-20T03:30:00.000Z",
+    "venue": "99, Residency Rd, Shanthala Nagar, Bengaluru, Karnataka 560025",
+    "description": "Trade the city noise for a night of soulful melodies and starlit vibes. Acoustic Under the Stars brings together the region's finest unplugged artists for an intimate concert experience at [Venue Name].\n\nThe Vibe:\n\n🕯️ Ambiance: Low lights, cozy seating, and open skies.\n\n🎸 Lineup: 3 award-winning acoustic acts.\n\n🍷 Refreshments: Curated local bites and craft beverages included.\n\nGrab a blanket and a friend for Bengaluru’s most relaxing evening. Limited tickets available to keep the atmosphere intimate.",
+    "status": "upcoming",
+    "organizerId": "mock_organizer_1",
+    "createdAt": "2026-04-07T08:35:08.324Z",
+    "updatedAt": "2026-04-07T08:41:09.174Z",
+    "__v": 0
+  },
+  {
+    "organizerId": "mock_organizer_1",
+    "_id": "69d4a8b72ec7cd89508d2b9a",
+    "title": "Standup Comedy Night",
+    "description": "Get ready for a night of non-stop laughter! Join us at the Laugh Factory for an evening featuring a curated lineup of hilarious comedians. Whether you're a die-hard comedy fan or just looking for a great way to unwind, this event promises sharp wit, relatable stories, and a fantastic atmosphere.\n\n🎭 Highlights:\nLive Performance: A variety of standup sets ranging from observational humor to storytelling.\n\nGreat Atmosphere: Hosted at the iconic Laugh Factory, known for its intimate setting and excellent acoustics.\n\nRefreshments: Enjoy a selection of drinks available throughout the show to keep the good vibes flowing.",
+    "date": "2026-04-10T20:00:00.000Z",
+    "time": "20:00",
+    "venue": "Laugh Factory",
+    "price": 500,
+    "category": "Entertainment",
+    "images": [
+      "https://images.unsplash.com/photo-1585699324551-f6c309eedeca?w=1000&auto=format&fit=crop&q=80"
+    ],
+    "createdBy": "organizer_123",
+    "totalTickets": 300,
+    "availableTickets": 300,
+    "source": "organizer",
+    "status": "completed",
+    "__v": 0,
+    "createdAt": "2026-04-07T06:48:23.431Z",
+    "updatedAt": "2026-04-07T07:32:27.779Z"
+  },
+  {
+    "organizerId": "mock_organizer_1",
+    "_id": "69d4a8b72ec7cd89508d2b9c",
+    "title": "Global Business Expo",
+    "description": "The Global Business Expo is the premier destination for professionals looking to scale their operations, discover market trends, and connect with industry giants. This event serves as a high-level networking hub for entrepreneurs, investors, and corporate leaders.\n\n🌐 Event Highlights\nNetworking Hub: Engage with a diverse group of international business leaders and potential partners.\n\nInnovation Showcase: Explore the latest B2B solutions and services in the Metro Expo Center exhibition hall.\n\nIndustry Insights: Attend sessions focused on global market expansion and sustainable business practices.",
+    "date": "2026-08-12T10:00:00.000Z",
+    "time": "10:00",
+    "venue": "Metro Expo Center",
+    "price": 2500,
+    "category": "Business",
+    "images": [
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1000&auto=format&fit=crop&q=80"
+    ],
+    "createdBy": "organizer_123",
+    "totalTickets": 2000,
+    "availableTickets": 2000,
+    "source": "organizer",
+    "status": "upcoming",
+    "__v": 0,
+    "createdAt": "2026-04-07T06:48:23.431Z",
+    "updatedAt": "2026-04-07T07:36:33.631Z"
+  },
+  {
+    "organizerId": "mock_organizer_1",
+    "_id": "69d4a8b72ec7cd89508d2b9d",
+    "title": "Art & Wine Festival",
+    "description": "Based on your current dashboard, here is the description for your upcoming event:\n\nArt & Wine Festival\nLocation: Downtown Square\n\nDate & Time: May 9, 2026 – 14:00\n\nPrice: ₹30\n\nAvailability: 800 / 800 available\n\nEvent Overview\nThe Art & Wine Festival at Downtown Square is a curated celebration of local creativity and fine viticulture. Designed as a relaxed afternoon experience, the festival transforms the heart of the city into an open-air gallery and tasting room.\n\nWhat to Expect\nArtisanal Showcase: Explore a diverse range of works from local artists, including paintings, sculptures, and handcrafted jewelry.\n\nWine Tasting: Sample a selection of premium wines from regional vineyards.\n\nLive Atmosphere: Enjoy the scenic outdoor setting of Downtown Square with ambient live music and local food pairings.\n\nCommunity Vibe: A perfect weekend outing for art enthusiasts, wine lovers, and those looking to support the local creative economy.",
+    "date": "2026-09-05T14:00:00.000Z",
+    "time": "14:00",
+    "venue": "Downtown Square",
+    "price": 3000,
+    "category": "Arts",
+    "images": [
+      "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80"
+    ],
+    "createdBy": "organizer_123",
+    "totalTickets": 800,
+    "availableTickets": 800,
+    "source": "organizer",
+    "status": "upcoming",
+    "__v": 0,
+    "createdAt": "2026-04-07T06:48:23.431Z",
+    "updatedAt": "2026-04-07T07:03:24.116Z"
+  },
+  {
+    "organizerId": "mock_organizer_1",
+    "_id": "69d4a8b72ec7cd89508d2b9e",
+    "title": "Marathon City Run",
+    "description": "The Marathon City Run is our premier annual athletic event, inviting runners of all levels to take over the streets for a scenic 10K journey. Starting at the iconic City Hall, this race is designed to showcase the beauty of our urban landscape while promoting health, fitness, and community spirit.\n\nWhat to Expect\nThe Route: A professionally timed 10K course that winds through major city landmarks, offering a unique perspective of the skyline at sunrise.\n\nEarly Bird Start: Kick off your morning at 06:00 AM to beat the heat and enjoy the crisp city air.\n\nSupport Stations: Hydration and cheering stations will be positioned throughout the route to keep your energy high.\n\nFinish Line Celebration: Join fellow runners at the end for medals, refreshments, and a post-race community gathering.\n\nQuick Tips for Organizers\nCapacity: You have 500 tickets available for this event.\n\nCurrent Status: The event is listed as Upcoming. You can monitor registrations or adjust ticket pricing in the Events section of your dashboard.\n\nPromotion: Since this is a high-energy sports event, consider using the Promo Codes tab to offer early-bird discounts for local running clubs.",
+    "date": "2026-11-01T06:00:00.000Z",
+    "time": "06:00",
+    "venue": "Starting line: City Hall",
+    "price": 450,
+    "category": "Sports",
+    "images": [
+      "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=1000&auto=format&fit=crop&q=80"
+    ],
+    "createdBy": "organizer_123",
+    "totalTickets": 500,
+    "availableTickets": 500,
+    "source": "organizer",
+    "status": "upcoming",
+    "__v": 0,
+    "createdAt": "2026-04-07T06:48:23.431Z",
+    "updatedAt": "2026-04-07T07:35:30.062Z"
+  },
+  {
+    "organizerId": "mock_organizer_1",
+    "_id": "69d4a8b72ec7cd89508d2b99",
+    "title": "Tech Innovators Summit",
+    "description": "Tech Innovators Summit\nLocation: Grand Convention Center\n\nDate & Time: May 20, 2026 – 09:00\n\nPrice: ₹150\n\nAvailability: 1000 / 1000 available\n\nEvent Overview\nThe Tech Innovators Summit is the year’s premier gathering for visionaries, developers, and industry leaders. Hosted at the state-of-the-art Grand Convention Center, this summit is dedicated to exploring the frontiers of technology, from Artificial Intelligence and Green Tech to the latest in Cybersecurity and Blockchain.\n\nWhat to Expect\nKeynote Sessions: Hear from world-class tech pioneers about the trends shaping our digital future.\n\nInteractive Workshops: Get hands-on experience with emerging tools and platforms in guided technical sessions.\n\nNetworking Hub: Connect with fellow innovators, potential investors, and tech enthusiasts during our structured networking breaks.\n\nDemo Zone: Experience live demonstrations of cutting-edge hardware and software from the region's most promising startups.\n\nOrganizer Notes\nCapacity Management: With 1,000 tickets available, you can track real-time registration progress on your Dashboard.\n\nRevenue Goals: At the current price of ₹150, this event is positioned to be a significant contributor to your Earnings.\n\nOptimization: Keep an eye on the Analytics tab to see which marketing channels are driving the most traffic to this summit.",
+    "date": "2026-05-20T09:00:00.000Z",
+    "time": "09:00",
+    "venue": "Grand Convention Center",
+    "price": 1500,
+    "category": "Technology",
+    "images": [
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1000&auto=format&fit=crop&q=80"
+    ],
+    "createdBy": "organizer_123",
+    "totalTickets": 1000,
+    "availableTickets": 1000,
+    "source": "organizer",
+    "status": "upcoming",
+    "__v": 0,
+    "createdAt": "2026-04-07T06:48:23.430Z",
+    "updatedAt": "2026-04-07T07:05:35.047Z"
+  }
+]

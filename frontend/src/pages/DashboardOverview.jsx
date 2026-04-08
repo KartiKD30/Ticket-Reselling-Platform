@@ -77,7 +77,7 @@ const DashboardOverview = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard 
           title="Total Revenue" 
-          value={`$${(data?.totalRevenue || 0).toLocaleString()}`} 
+          value={`₹${(data?.totalRevenue || 0).toLocaleString()}`} 
           icon={DollarSign} 
         />
         <StatCard 
@@ -120,7 +120,7 @@ const DashboardOverview = () => {
                   fontSize={12} 
                   tickLine={false} 
                   axisLine={false} 
-                  tickFormatter={(value) => `$${value}`}
+                  tickFormatter={(value) => `₹${value}`}
                 />
                 <Tooltip 
                   cursor={{stroke: 'hsl(var(--muted))', strokeWidth: 1}}

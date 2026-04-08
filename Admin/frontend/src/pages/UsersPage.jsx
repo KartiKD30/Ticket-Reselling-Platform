@@ -44,8 +44,8 @@ const UsersPage = () => {
     };
 
     const filteredUsers = users.filter(user => 
-        user.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-        user.email.toLowerCase().includes(searchTerm.toLowerCase())
+        (user.name || '').toLowerCase().includes((searchTerm || '').toLowerCase()) || 
+        (user.email || '').toLowerCase().includes((searchTerm || '').toLowerCase())
     );
 
     if (loading) return (
@@ -96,10 +96,10 @@ const UsersPage = () => {
                                 <tr key={user._id}>
                                     <td>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                                            <div style={{ width: '36px', height: '36px', borderRadius: '12px', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--border)', color: 'var(--primary)' }}>
+                                            <div style={{ width: '36px', height: '36px', borderRadius: '12px', background: 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--border)', color: 'var(--primary)' }}>
                                                 <User size={18} />
                                             </div>
-                                            <div style={{ fontWeight: '700', color: 'white' }}>{user.name}</div>
+                                            <div style={{ fontWeight: '700', color: 'var(--text-main)' }}>{user.name}</div>
                                         </div>
                                     </td>
                                     <td>

@@ -259,3 +259,66 @@ exports.getRevenueStats = async (req, res) => {
         res.status(500).json({ msg: err.message });
     }
 };
+
+// Resales: Get pending resale requests
+exports.getPendingResales = async (req, res) => {
+    try {
+        const resales = await Booking.find({ resaleStatus: 'Pending' })
+            .populate('event', 'title date venue price')
+            .populate('user', 'name email');
+        res.json(resales);
+    } catch (err) {
+        res.status(500).json({ msg: err.message });
+    }
+};
+
+// Resales: Approve resale request
+exports.approveResale = async (req, res) => {
+    try {
+        const booking = await Booking.findById(req.params.id);
+        if (!booking) return res.status(404).json({ msg: 'Booking not found' });
+
+        booking.resaleStatus = 'Approved';
+        booking.isResale = true;
+        await booking.save();
+
+        // Log action
+        await new AuditLog({
+            admin: req.user.id,
+            action: 'APPROVE_RESALE',
+            targetType: 'Booking',
+            targetId: booking._id,
+            details: `Admin approved resale for booking ID: ${booking._id}`
+        }).save();
+
+        res.json({ msg: 'Resale request approved successfully', booking });
+    } catch (err) {
+        res.status(500).json({ msg: err.message });
+    }
+};
+
+// Resales: Reject resale request
+exports.rejectResale = async (req, res) => {
+    try {
+        const booking = await Booking.findById(req.params.id);
+        if (!booking) return res.status(404).json({ msg: 'Booking not found' });
+
+        booking.resaleStatus = 'Rejected';
+        // isResale might be true or false, but setting it false ensures it's off the market
+        booking.isResale = false; 
+        await booking.save();
+
+        // Log action
+        await new AuditLog({
+            admin: req.user.id,
+            action: 'REJECT_RESALE',
+            targetType: 'Booking',
+            targetId: booking._id,
+            details: `Admin rejected resale for booking ID: ${booking._id}`
+        }).save();
+
+        res.json({ msg: 'Resale request rejected successfully', booking });
+    } catch (err) {
+        res.status(500).json({ msg: err.message });
+    }
+};

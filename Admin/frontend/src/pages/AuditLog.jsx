@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import api from '../utils/api';
-import { 
-    Clock, 
-    ShieldAlert, 
-    AtSign, 
-    User, 
-    Database, 
+import {
+    Clock,
+    ShieldAlert,
+    AtSign,
+    User,
+    Database,
     Terminal,
     ChevronDown,
     Loader2
@@ -38,8 +38,8 @@ const AuditLog = () => {
     return (
         <div className="animate-slide-up">
             <header style={{ marginBottom: '48px' }}>
-                 <h1 style={{ fontSize: '36px', fontWeight: '800', letterSpacing: '-0.02em' }}>Audit Logs</h1>
-                 <p style={{ color: 'var(--text-muted)', marginTop: '8px', fontSize: '16px' }}>Detailed history of administrative actions on the platform.</p>
+                <h1 style={{ fontSize: '36px', fontWeight: '800', letterSpacing: '-0.02em' }}>Audit Logs</h1>
+                <p style={{ color: 'var(--text-muted)', marginTop: '8px', fontSize: '16px' }}>Detailed history of administrative actions on the platform.</p>
             </header>
 
             <div className="table-container premium-shadow" style={{ maxHeight: '70vh', overflowY: 'auto' }}>
@@ -73,13 +73,13 @@ const AuditLog = () => {
                                                 {log.admin?.name?.charAt(0) || 'A'}
                                             </div>
                                             <div>
-                                                <div style={{ fontWeight: '700', color: 'white' }}>{log.admin?.name || 'Unknown'}</div>
+                                                <div style={{ fontWeight: '700', color: 'var(--text-main)' }}>{log.admin?.name || 'Unknown'}</div>
                                                 <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{log.admin?.email}</div>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <span className="badge" style={{ 
+                                        <span className="badge" style={{
                                             background: log.action.includes('DELETE') ? 'rgba(239, 68, 68, 0.1)' : 'rgba(129, 140, 248, 0.1)',
                                             color: log.action.includes('DELETE') ? 'var(--error)' : 'var(--primary)'
                                         }}>

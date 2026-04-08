@@ -7,6 +7,8 @@ const bookingSchema = new mongoose.Schema({
   totalAmount: { type: Number, required: true },
   paymentStatus: { type: String, enum: ['Paid', 'Pending', 'Refunded'], default: 'Paid' },
   isResale: { type: Boolean, default: false },
+  resaleStatus: { type: String, enum: ['None', 'Pending', 'Approved', 'Rejected'], default: 'None' },
+  resalePrice: { type: Number },
   qrCode: { type: String }, // Placeholder for dynamic QR
   createdAt: { type: Date, default: Date.now },
 });

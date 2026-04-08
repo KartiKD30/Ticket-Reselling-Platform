@@ -13,7 +13,10 @@ const {
     getRevenueStats,
     approveEvent,
     rejectEvent,
-    getEventRevenueReport
+    getEventRevenueReport,
+    getPendingResales,
+    approveResale,
+    rejectResale
 } = require('../controllers/adminController');
 
 // All routes here should be protected and Admin-only
@@ -39,5 +42,10 @@ router.patch('/users/block/:id', toggleUserBlock);
 
 // Audit
 router.get('/audit-logs', getAuditLogs);
+
+// Resales
+router.get('/resales', getPendingResales);
+router.patch('/resales/approve/:id', approveResale);
+router.patch('/resales/reject/:id', rejectResale);
 
 module.exports = router;

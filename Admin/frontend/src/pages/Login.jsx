@@ -31,7 +31,7 @@ const Login = () => {
             display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'center',
-            background: 'radial-gradient(at center center, #1e1b4b 0%, #020617 100%)'
+            background: 'radial-gradient(at center center, #e0e7ff 0%, #f8fafc 100%)'
         }}>
             <div className="glass-card animate-slide-up" style={{ width: '100%', maxWidth: '440px', padding: '48px' }}>
                 <div style={{ textAlign: 'center', marginBottom: '40px' }}>

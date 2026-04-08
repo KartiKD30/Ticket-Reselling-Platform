@@ -62,7 +62,7 @@ const DashboardHome = () => {
                         </div>
                         <div style={{ marginTop: '24px' }}>
                             <span style={{ color: 'var(--text-muted)', fontSize: '12px', fontWeight: '800', letterSpacing: '0.05em' }}>{item.label}</span>
-                            <h2 style={{ fontSize: '32px', fontWeight: '800', marginTop: '8px', color: 'white' }}>{item.value}</h2>
+                            <h2 style={{ fontSize: '32px', fontWeight: '800', marginTop: '8px', color: 'var(--text-main)' }}>{item.value}</h2>
                         </div>
                     </div>
                 ))}
@@ -72,7 +72,7 @@ const DashboardHome = () => {
                 <div className="glass-card">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
                         <h3 style={{ fontSize: '20px', fontWeight: '800' }}>Revenue by Category</h3>
-                        <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', color: 'var(--text-muted)' }}>Top Performing</div>
+                        <div style={{ background: 'rgba(0,0,0,0.05)', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', color: 'var(--text-muted)' }}>Top Performing</div>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                         {Object.entries(revenueByCategory || {}).map(([cat, val]) => (
@@ -81,7 +81,7 @@ const DashboardHome = () => {
                                     <span style={{ fontWeight: '600' }}>{cat}</span>
                                     <span style={{ color: 'var(--text-muted)' }}>${val.toLocaleString()}</span>
                                 </div>
-                                <div style={{ height: '8px', background: 'rgba(255,255,255,0.05)', borderRadius: '10px', overflow: 'hidden' }}>
+                                <div style={{ height: '8px', background: 'rgba(0,0,0,0.05)', borderRadius: '10px', overflow: 'hidden' }}>
                                     <div style={{ width: `${(val / (stats.totalRevenue || 1)) * 100}%`, height: '100%', background: 'var(--primary)' }}></div>
                                 </div>
                             </div>

@@ -9,7 +9,8 @@ import {
   LogOut, 
   PlusCircle,
   Menu,
-  X
+  X,
+  Ticket
 } from 'lucide-react';
 
 import Login from './pages/Login';
@@ -18,6 +19,7 @@ import EventsPage from './pages/EventsPage';
 import UsersPage from './pages/UsersPage';
 import RevenuePage from './pages/RevenuePage';
 import AuditLog from './pages/AuditLog';
+import ResalesPage from './pages/ResalesPage';
 import { useAuth } from './context/AuthContext';
 
 function App() {
@@ -25,9 +27,9 @@ function App() {
   const location = useLocation();
 
   if (loading) return (
-    <div style={{ display: 'flex', height: '100vh', width: '100vw', alignItems: 'center', justifyContent: 'center', backgroundColor: '#020617' }}>
+    <div style={{ display: 'flex', height: '100vh', width: '100vw', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8fafc' }}>
       <div style={{ textAlign: 'center' }}>
-        <div style={{ height: '48px', width: '48px', border: '4px solid rgba(255,255,255,0.1)', borderTopColor: 'var(--primary)', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto 24px' }}></div>
+        <div style={{ height: '48px', width: '48px', border: '4px solid rgba(0,0,0,0.1)', borderTopColor: 'var(--primary)', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto 24px' }}></div>
         <p style={{ letterSpacing: '4px', fontSize: '12px', fontWeight: '800', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Synchronizing System</p>
       </div>
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
@@ -65,6 +67,9 @@ function App() {
             <NavLink to="/revenue" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
               <TrendingUp size={22} /> Revenue
             </NavLink>
+            <NavLink to="/resales" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              <Ticket size={22} /> Resale Requests
+            </NavLink>
             <NavLink to="/audit" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
               <ShieldCheck size={22} /> Audit Logs
             </NavLink>
@@ -99,6 +104,7 @@ function App() {
           <Route path="/events" element={<EventsPage />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/revenue" element={<RevenuePage />} />
+          <Route path="/resales" element={<ResalesPage />} />
           <Route path="/audit" element={<AuditLog />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

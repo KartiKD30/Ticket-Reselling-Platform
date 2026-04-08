@@ -157,7 +157,7 @@ const EventsPage = () => {
                      <p style={{ color: 'var(--text-muted)', marginTop: '8px', fontSize: '16px' }}>Manage primary ticket sales and event logistics.</p>
                 </div>
                 <div style={{ display: 'flex', gap: '12px' }}>
-                    <div style={{ display: 'flex', background: 'rgba(255,255,255,0.05)', padding: '4px', borderRadius: '12px', border: '1px solid var(--border)' }}>
+                    <div style={{ display: 'flex', background: 'rgba(0,0,0,0.05)', padding: '4px', borderRadius: '12px', border: '1px solid var(--border)' }}>
                         {['All', 'Pending', 'Approved', 'Rejected'].map(tab => (
                             <button
                                 key={tab}
@@ -232,7 +232,7 @@ const EventsPage = () => {
                                     </td>
                                     <td>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                            <div style={{ width: '100px', height: '6px', background: 'rgba(255,255,255,0.05)', borderRadius: '10px', overflow: 'hidden' }}>
+                                            <div style={{ width: '100px', height: '6px', background: 'rgba(0,0,0,0.05)', borderRadius: '10px', overflow: 'hidden' }}>
                                                 <div style={{ 
                                                     width: `${((event.totalSeats - event.availableSeats) / event.totalSeats) * 100}%`, 
                                                     height: '100%', 
@@ -306,7 +306,7 @@ const EventsPage = () => {
 
             {/* Create/Edit Modal */}
             {isModalOpen && (
-                <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(2, 6, 23, 0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(10px)' }}>
+                <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(255, 255, 255, 0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(10px)' }}>
                     <div className="glass-card premium-shadow" style={{ width: '100%', maxWidth: '600px', padding: '40px', position: 'relative' }}>
                         <button 
                             onClick={() => setModalOpen(false)}
@@ -360,7 +360,7 @@ const EventsPage = () => {
                                 <button type="submit" className="btn-primary" style={{ flex: 1, padding: '16px' }}>
                                     {isEditing ? 'Save Changes' : 'Publish Event'}
                                 </button>
-                                <button type="button" onClick={() => setModalOpen(false)} style={{ flex: 1, background: 'rgba(255,254,255,0.05)', color: 'white', border: '1px solid var(--border)', padding: '16px', borderRadius: '12px', fontWeight: '600', cursor: 'pointer' }}>
+                                <button type="button" onClick={() => setModalOpen(false)} style={{ flex: 1, background: 'rgba(0,0,0,0.05)', color: 'var(--text-main)', border: '1px solid var(--border)', padding: '16px', borderRadius: '12px', fontWeight: '600', cursor: 'pointer' }}>
                                     Cancel
                                 </button>
                             </div>
@@ -371,7 +371,7 @@ const EventsPage = () => {
 
             {/* Revenue Report Modal */}
             {revenueModalOpen && (
-                <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(2, 6, 23, 0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(10px)' }}>
+                <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(255, 255, 255, 0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(10px)' }}>
                     <div className="glass-card premium-shadow" style={{ width: '100%', maxWidth: '800px', padding: '40px', position: 'relative' }}>
                         <button 
                             onClick={() => setRevenueModalOpen(false)}
@@ -391,31 +391,31 @@ const EventsPage = () => {
                                 <p style={{ color: 'var(--text-muted)', marginBottom: '32px' }}>{revenueData.event.title} • {new Date(revenueData.event.date).toLocaleDateString()}</p>
 
                                 <div className="stat-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '40px' }}>
-                                    <div className="stat-card" style={{ padding: '24px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                                    <div className="stat-card" style={{ padding: '24px', background: 'rgba(0,0,0,0.03)', border: '1px solid rgba(0,0,0,0.05)' }}>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-muted)', fontSize: '13px', fontWeight: '600', marginBottom: '8px' }}>
                                             <TrendingUp size={14} /> GROSS SALES
                                         </div>
                                         <div style={{ fontSize: '28px', fontWeight: '800', color: 'var(--success)' }}>${revenueData.report.totalRevenue.toLocaleString()}</div>
                                         <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>{revenueData.report.totalSold} tickets sold</div>
                                     </div>
-                                    <div className="stat-card" style={{ padding: '24px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                                    <div className="stat-card" style={{ padding: '24px', background: 'rgba(0,0,0,0.03)', border: '1px solid rgba(0,0,0,0.05)' }}>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-muted)', fontSize: '13px', fontWeight: '600', marginBottom: '8px' }}>
                                             <PieIcon size={14} /> PLATFORM CUT
                                         </div>
                                         <div style={{ fontSize: '28px', fontWeight: '800', color: 'var(--primary)' }}>${revenueData.report.adminCommission.toLocaleString()}</div>
                                         <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>Fixed 10% fee</div>
                                     </div>
-                                    <div className="stat-card" style={{ padding: '24px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                                    <div className="stat-card" style={{ padding: '24px', background: 'rgba(0,0,0,0.03)', border: '1px solid rgba(0,0,0,0.05)' }}>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-muted)', fontSize: '13px', fontWeight: '600', marginBottom: '8px' }}>
                                             <DollarSign size={14} /> ORG. SHARE
                                         </div>
-                                        <div style={{ fontSize: '28px', fontWeight: '800', color: 'white' }}>${revenueData.report.organizerShare.toLocaleString()}</div>
+                                        <div style={{ fontSize: '28px', fontWeight: '800', color: 'var(--text-main)' }}>${revenueData.report.organizerShare.toLocaleString()}</div>
                                         <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>Net payout</div>
                                     </div>
                                 </div>
 
                                 <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '16px' }}>Recent Bookings</h3>
-                                <div className="table-container" style={{ maxHeight: '300px', overflowY: 'auto', border: '1px solid rgba(255,255,255,0.05)', background: 'transparent' }}>
+                                <div className="table-container" style={{ maxHeight: '300px', overflowY: 'auto', border: '1px solid rgba(0,0,0,0.05)', background: 'transparent' }}>
                                     <table style={{ borderCollapse: 'separate', borderSpacing: '0' }}>
                                         <thead style={{ position: 'sticky', top: 0, zIndex: 1, background: 'var(--bg-card)' }}>
                                             <tr>

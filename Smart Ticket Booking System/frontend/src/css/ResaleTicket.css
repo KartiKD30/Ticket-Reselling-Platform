@@ -1,0 +1,512 @@
+/* ── Resale Ticket Page ───────────────────────────────── */
+
+.resale-page {
+  min-height: 100vh;
+  background: #f8f9fb;
+  padding: 30px 40px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ── Header ──────────────────────────────────────────── */
+
+.resale-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.resale-title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.resale-subtitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.resale-form-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid #f0d7dc;
+  background: #fff;
+  margin-bottom: 18px;
+}
+
+.resale-form-tab {
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.resale-form-tab--active {
+  background: #f84464;
+  color: #fff;
+}
+
+/* ── Tabs ────────────────────────────────────────────── */
+
+.resale-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid #f0d7dc;
+  padding-bottom: 0;
+}
+
+.resale-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.18s, border-color 0.18s;
+  border-radius: 0;
+}
+
+.resale-tab:hover {
+  color: #7f1d1d;
+}
+
+.resale-tab--active {
+  color: #7f1d1d;
+  border-bottom-color: #f84464;
+}
+
+.resale-tab__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.resale-tab--active .resale-tab__count {
+  background: #f84464;
+  color: #fff;
+}
+
+/* ── States ──────────────────────────────────────────── */
+
+.resale-loading,
+.resale-error {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.resale-error {
+  color: #b91c1c;
+}
+
+.resale-empty {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 60px 20px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.resale-empty__icon {
+  font-size: 48px;
+}
+
+.resale-switch-btn {
+  margin-top: 8px;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #f84464, #b91c1c);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.18s, transform 0.15s;
+}
+
+.resale-switch-btn:hover {
+  opacity: 0.88;
+  transform: scale(1.03);
+}
+
+/* ── Grid ────────────────────────────────────────────── */
+
+.resale-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* ── Card ────────────────────────────────────────────── */
+
+.resale-card {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ece9e9;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(2, 6, 23, 0.05);
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.resale-card:hover {
+  box-shadow: 0 8px 28px rgba(126, 29, 29, 0.1);
+  transform: translateY(-2px);
+}
+
+.resale-card--listed {
+  border-left: 4px solid #f84464;
+}
+
+.resale-card__left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  min-width: 72px;
+  background: linear-gradient(160deg, #fff1f2, #ffe4e6);
+  font-size: 30px;
+}
+
+.resale-card__body {
+  flex: 1;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Card Top ────────────────────────────────────────── */
+
+.resale-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.resale-card__event {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.resale-card__venue {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ── Badges ──────────────────────────────────────────── */
+
+.resale-badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.resale-badge--confirmed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.resale-badge--listed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.resale-badge--pending {
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.resale-badge--approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.resale-badge--rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ── Pills ───────────────────────────────────────────── */
+
+.resale-card__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.resale-pill {
+  padding: 4px 12px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* ── Footer / Price Block ────────────────────────────── */
+
+.resale-card__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.resale-card__original {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.resale-price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resale-price-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.resale-price-input {
+  width: 130px;
+  padding: 8px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.resale-price-input:focus {
+  border-color: #f84464;
+}
+
+.resale-price-input::-webkit-inner-spin-button,
+.resale-price-input::-webkit-outer-spin-button {
+  opacity: 0.5;
+}
+
+/* ── List Button ─────────────────────────────────────── */
+
+.resale-list-btn {
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #f84464, #b91c1c);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.18s, transform 0.15s, background 0.18s;
+}
+
+.resale-list-btn:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: scale(1.03);
+}
+
+.resale-list-btn--success {
+  background: #059669;
+  cursor: default;
+}
+
+.resale-list-btn:disabled {
+  opacity: 0.75;
+}
+
+/* ── Booking ID ──────────────────────────────────────── */
+
+.resale-card__id {
+  margin: 0;
+  font-size: 11px;
+  font-family: monospace;
+  color: #9ca3af;
+}
+
+/* ── Price Summary (listed) ──────────────────────────── */
+
+.resale-card__price-summary {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.resale-price-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.resale-price-summary-row strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.resale-price-summary-row--highlight {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.resale-price-summary-row--highlight strong {
+  color: #b91c1c;
+  font-size: 15px;
+}
+
+/* ── Card Actions (listed) ───────────────────────────── */
+
+.resale-card__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.resale-buy-form {
+  display: grid;
+  gap: 8px;
+}
+
+.resale-remove-btn {
+  padding: 8px 18px;
+  background: transparent;
+  color: #b91c1c;
+  border: 2px solid #f87171;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.resale-remove-btn:hover {
+  background: #fee2e2;
+}
+
+/* ── Seller Form — Price Block ───────────────────────── */
+
+.resale-card__price-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  width: 100%;
+}
+
+.resale-card__price-block .resale-price-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.resale-card__price-block .resale-price-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Override footer to stack form + button vertically */
+.resale-card__footer {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.resale-card__footer .resale-list-btn {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 14px;
+}
+
+/* ── Buyer Details Section ───────────────────────────── */
+
+.resale-buyer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1.5px dashed #f0d7dc;
+  margin-top: 2px;
+}
+
+.resale-buyer-section__title {
+  margin: 0 0 2px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #b91c1c;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .resale-page {
+    padding: 20px 16px 40px;
+  }
+
+  .resale-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resale-price-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .resale-price-input {
+    width: 100%;
+  }
+}

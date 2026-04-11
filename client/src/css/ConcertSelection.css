@@ -1,0 +1,130 @@
+.concert-selection {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  align-items: flex-start;
+}
+
+.concert-selection__map {
+  flex: 3;
+}
+
+.concert-selection__svg {
+  display: block;
+}
+
+.concert-selection__summary {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.concert-selection__total {
+  color: #f84464;
+}
+
+.concert-selection__button {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  background: #f84464;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.concert-selection__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.concert-selection__button:hover {
+  background: #e23655;
+}
+
+.concert-selection__interactive {
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.concert-selection__interactive:hover {
+  filter: brightness(1.05);
+}
+
+.concert-selection__interactive--selected {
+  filter: drop-shadow(0 0 8px rgba(248, 68, 100, 0.55));
+}
+
+.concert-selection__list {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.concert-selection__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.concert-selection__item-name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.concert-selection__item-meta {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.concert-selection__item-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.concert-selection__item-actions button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 999px;
+  background: #f84464;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.concert-selection__item-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.concert-selection__hint {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.concert-selection__empty {
+  padding: 32px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .concert-selection {
+    flex-direction: column;
+  }
+
+  .concert-selection__map,
+  .concert-selection__summary {
+    width: 100%;
+  }
+}
